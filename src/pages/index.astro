@@ -1,16 +1,166 @@
----
+<html lang='es'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Portafolio de César Coello</title>
+    <style>
+      /* Estilo para ocultar la modal inicialmente */
+      .modal {
+        display: none;
+      }
 
----
+      /* Mostrar la modal cuando esté activa */
+      .modal.active {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body class='bg-black text-white h-screen flex flex-col px-4 md:px-8'>
+    <!-- Header con menú hamburguesa -->
+    <header
+      class='bg-gray-900 px-8 py-4 mt-2 flex justify-between items-center rounded-full w-full max-w-screen-xl mx-auto'
+    >
+      <!-- Logo o Título -->
+      <h1 class='text-white text-lg font-bold'>César Coello.</h1>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Portfolio de Cesar Coello</h1>
-	</body>
+      <!-- Menú de navegación para pantallas grandes -->
+      <nav class='space-x-6 hidden md:flex'>
+        <a
+          href='#inicio'
+          class='text-white font-bold hover:text-gray-400 transition duration-200'
+          >inicio.</a
+        >
+        <a
+          href='#proyectos'
+          class='text-gray-400 hover:text-white transition duration-200'
+          >proyectos.</a
+        >
+        <a
+          href='#contacto'
+          class='text-gray-400 hover:text-white transition duration-200'
+          >contacto.</a
+        >
+      </nav>
+
+      <!-- Menú hamburguesa en móvil -->
+      <button
+        id='hamburger'
+        class='text-white text-xl block md:hidden focus:outline-none'
+      >
+        &#9776;
+      </button>
+    </header>
+
+    <!-- Modal del menú hamburguesa -->
+    <div
+      id='menuModal'
+      class='modal fixed inset-0 bg-gray-900 bg-opacity-95 z-50 flex items-center justify-center text-center'
+    >
+      <div class='flex flex-col space-y-6'>
+        <button
+          id='closeMenu'
+          class='text-white text-3xl absolute top-8 right-8 focus:outline-none'
+        >
+          &times;
+        </button>
+        <a
+          href='#inicio'
+          class='text-white text-3xl font-bold hover:text-gray-400 transition duration-200'
+          >inicio.</a
+        >
+        <a
+          href='#proyectos'
+          class='text-white text-3xl font-bold hover:text-gray-400 transition duration-200'
+          >proyectos.</a
+        >
+        <a
+          href='#contacto'
+          class='text-white text-3xl font-bold hover:text-gray-400 transition duration-200'
+          >contacto.</a
+        >
+      </div>
+    </div>
+
+    <!-- Main section que ocupa el resto de la pantalla -->
+    <main
+      class='flex-grow flex items-center justify-center w-full max-w-screen-xl mx-auto'
+    >
+      <section
+        class='grid w-full h-full max-w-screen-2xl gap-2 py-2 my-2 grid-cols-2 grid-rows-12 md:grid-cols-5 md:grid-rows-10'
+      >
+        <!-- Sección de presentación con nombre y título -->
+        <div
+          class='rounded-3xl p-8 col-span-2 md:col-span-3 row-span-5 md:row-span-9 bg-gray-800 text-white shadow-md flex flex-col justify-center items-start'
+        >
+          <h1 class='text-6xl font-bold mb-4'>Soy César</h1>
+          <p class='text-2xl'>
+            Desarrollador web comprometido a alcanzar metas y proyectos
+            exitosos.
+          </p>
+        </div>
+
+        <!-- Sección de contacto -->
+        <div
+          class='rounded-3xl p-8 col-span-2 md:col-span-2 row-span-4 md:row-span-9 bg-gray-700 shadow-md flex flex-col justify-center items-center text-center'
+        >
+          <h2 class='text-3xl font-semibold mb-4 text-white'>
+            ¿Quieres empezar un proyecto juntos?
+          </h2>
+          <a
+            href='mailto:cesarcoellomr@gmail.com'
+            class='text-lg text-teal-300 hover:text-teal-400 underline'
+          >
+            cesarcoellomr@gmail.com
+          </a>
+        </div>
+
+        <!-- Redes sociales o enlaces adicionales -->
+        <div
+          class='col-span-2 rounded-full md:col-span-1 md:row-span-1 bg-gray-600 shadow-md flex items-center justify-center'
+        >
+          <p class='text-white'>LinkedIn</p>
+        </div>
+
+        <div
+          class='col-span-1 rounded-full md:col-span-1 row-span-1 bg-gray-600 shadow-md flex items-center justify-center'
+        >
+          <p class='text-white'>GitHub</p>
+        </div>
+
+        <div
+          class='col-span-1 rounded-full md:col-span-1 row-span-1 bg-gray-600 shadow-md flex items-center justify-center'
+        >
+          <p class='text-white'>Honduras</p>
+        </div>
+
+        <div
+          class='col-span-1 rounded-full md:col-span-1 row-span-1 bg-gray-600 shadow-md flex items-center justify-center'
+        >
+          <p class='text-white'>CV</p>
+        </div>
+
+        <div
+          class='col-span-1 rounded-full md:col-span-1 row-span-1 bg-gray-600 shadow-md flex items-center justify-center'
+        >
+          <p class='text-white'>Blog</p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const menuModal = document.getElementById("menuModal");
+      const closeMenu = document.getElementById("closeMenu");
+
+      // Abrir menú hamburguesa
+      hamburger?.addEventListener("click", () => {
+        menuModal?.classList.add("active");
+      });
+
+      // Cerrar menú hamburguesa
+      closeMenu?.addEventListener("click", () => {
+        menuModal?.classList.remove("active");
+      });
+    </script>
+  </body>
 </html>

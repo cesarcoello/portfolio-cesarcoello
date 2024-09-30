@@ -1,5 +1,5 @@
 ---
-
+const props = Astro.props;
 ---
 
 <html lang='es'>
@@ -14,7 +14,7 @@
     />
   </head>
   <body
-    class='bg-black text-white font-poppins h-screen flex flex-col px-4 md:px-8'
+    class='bg-black text-white font-poppins h-screen flex flex-col px-2 md:px-8'
   >
     <!-- Header con menú hamburguesa -->
     <header
@@ -95,7 +95,7 @@
         >
           <!-- Imagen del avatar con borde -->
           <div
-            class='rounded-full w-24 md:w-28 h-24 md:h-28 overflow-hidden border-4 border-cyan-400'
+            class='rounded-full w-24 md:w-28 h-24 md:h-28 overflow-hidden border-8 border-cyan-400'
           >
             <img
               src='avatar.jpg'
@@ -322,14 +322,15 @@
       </section>
 
       <section
-        class='bg-stone-900 min-h-screen h-screen grid grid-cols-5 md:grid-cols-2 grid-rows-19 md:grid-rows-6 gap-4 p-4 rounded-3xl max-w-screen-2xl'
+        id='proyectos'
+        class='bg-stone-900 md:min-h-screen md:h-screen grid grid-cols-5 md:grid-cols-2 grid-rows-19 md:grid-rows-6 gap-4 p-4 rounded-3xl max-w-screen-2xl'
       >
         <!-- Sección de proyectos -->
         <div
-          class='rounded-3xl col-span-5 md:col-span-2 row-span-1 p-8 bg-stone-800 text-white shadow-md flex justify-between items-start min-h-[50px]'
+          class='rounded-3xl col-span-5 md:col-span-2 row-span-1 p-8 text-white md:flex md:justify-between md:items-start min-h-[50px]'
         >
-          <h1 class='text-xl font-bold mb-4'>Proyectos</h1>
-          <h3 class='text-xl font-bold mb-4'>Enlace</h3>
+          <h1 class='text-4xl md:text-6xl font-semibold mb-4'>Proyectos</h1>
+          <a href='#proyectos' class='text-xl font-bold mb-4'>Enlace</a>
         </div>
 
         <!-- Proyecto 1 -->
@@ -350,10 +351,10 @@
             <!-- Título y Descripción -->
             <div>
               <div>
-                <h1 class='text-xl md:text-2xl font-semibold mb-2'>
+                <h1 class='text-xl md:text-5xl font-semibold mb-2'>
                   Expediente Odontológico Digital
                 </h1>
-                <p class='text-sm mb-2'>
+                <p class='text-sm md:text-lg mb-2'>
                   Análisis, diseño y desarrollo de un sistema de gestión de
                   expedientes de manera digital en la clínica odontológica de la
                   Facultad de Odontología de la UNAH.
@@ -378,14 +379,14 @@
                 <button class='bg-white text-stone-900 p-2 rounded-full'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
-                    class='h-7 w-7 md:h-14 md:w-14'
-                    viewBox='0 0 20 20'
-                    fill='currentColor'
+                    width='3em'
+                    height='3em'
+                    viewBox='0 0 24 24'
+                    {...props}
                   >
                     <path
-                      fill-rule='evenodd'
-                      d='M10.293 15.293a1 1 0 011.414 0l5-5a1 1 0 00-1.414-1.414L11 12.586V5a1 1 0 10-2 0v7.586l-3.293-3.293A1 1 0 104.293 10.707l5 5z'
-                      clip-rule='evenodd'></path>
+                      fill='currentColor'
+                      d='M17.6 18L8 8.4V17H6V5h12v2H9.4l9.6 9.6z'></path>
                   </svg>
                 </button>
               </div>
@@ -395,16 +396,122 @@
 
         <!-- Proyecto 2 -->
         <div
-          class='rounded-3xl col-span-5 md:col-span-1 row-span-6 md:row-span-2 p-8 bg-stone-800 text-white shadow-md flex flex-col justify-center items-start'
+          class='relative rounded-3xl col-span-5 md:col-span-1 row-span-6 md:row-span-2 bg-stone-800 shadow-md'
         >
-          <h1 class='text-xl font-bold mb-4'>Proyecto 2</h1>
+          <!-- Imagen de fondo con opacidad -->
+          <div
+            class='absolute inset-0 bg-cover bg-center bg-opacity-50 rounded-3xl'
+            style="background-image: url('/proyecto-02.jpg'); opacity: 0.3;"
+          >
+          </div>
+
+          <!-- Contenido del proyecto -->
+          <div
+            class='relative p-5 text-white flex flex-col justify-between h-full'
+          >
+            <!-- Título y Descripción -->
+            <div>
+              <div>
+                <h1 class='text-xl md:text-2xl font-semibold mb-2'>
+                  Control de Presupuesto
+                </h1>
+                <p class='text-sm md:text-sm mb-2'>
+                  Desarrollé una aplicación web para gestionar gastos personales
+                  según un presupuesto establecido.
+                </p>
+              </div>
+
+              <!-- Tecnologías utilizadas -->
+              <div class='flex space-x-2 items-center justify-start'>
+                <img src='stack/html.svg' alt='HTML5' class='w-6 h-6' />
+                <img src='stack/css.svg' alt='CSS3' class='w-6 h-6' />
+                <img
+                  src='stack/javascript.svg'
+                  alt='JavaScript'
+                  class='w-5 h-5'
+                />
+              </div>
+            </div>
+
+            <!-- Botón de flecha -->
+            <div>
+              <div class='flex justify-end items-end'>
+                <button
+                  class='bg-white text-stone-900 w:h-12 w:w-12 p-2 rounded-full flex justify-center items-center'
+                >
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='3em'
+                    height='3em'
+                    viewBox='0 0 24 24'
+                  >
+                    <path
+                      fill='currentColor'
+                      d='M17.6 18L8 8.4V17H6V5h12v2H9.4l9.6 9.6z'></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Proyecto 3 -->
         <div
-          class='rounded-3xl col-span-5 md:col-span-1 row-span-6 md:row-span-3 p-8 bg-stone-800 text-white shadow-md flex flex-col justify-center items-start'
+          class='relative rounded-3xl col-span-5 md:col-span-1 row-span-6 md:row-span-3 bg-stone-800 shadow-md'
         >
-          <h1 class='text-xl font-bold mb-4'>Proyecto 3</h1>
+          <!-- Imagen de fondo con opacidad -->
+          <div
+            class='absolute inset-0 bg-cover bg-center bg-opacity-50 rounded-3xl'
+            style="background-image: url('/proyecto-03.jpg'); opacity: 0.4;"
+          >
+          </div>
+
+          <!-- Contenido del proyecto -->
+          <div
+            class='relative p-5 text-white flex flex-col justify-between h-full'
+          >
+            <!-- Título y Descripción -->
+            <div>
+              <div>
+                <h1 class='text-xl md:text-5xl font-semibold mb-2'>
+                  Blog de Café
+                </h1>
+                <p class='text-sm md:text-lg mb-2'>
+                  Un blog sencillo y elegante sobre café, con diseño responsivo
+                  y optimizaciones de rendimiento como lazy loading y WebP.
+                </p>
+              </div>
+
+              <!-- Tecnologías utilizadas -->
+              <div class='flex space-x-2 items-center justify-start'>
+                <img src='stack/html.svg' alt='HTML5' class='w-6 h-6' />
+                <img src='stack/css.svg' alt='CSS3' class='w-6 h-6' />
+                <img
+                  src='stack/javascript.svg'
+                  alt='JavaScript'
+                  class='w-5 h-5'
+                />
+              </div>
+            </div>
+
+            <!-- Botón de flecha -->
+            <div>
+              <div class='flex justify-end items-end'>
+                <button class='bg-white text-stone-900 p-2 rounded-full'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='3em'
+                    height='3em'
+                    viewBox='0 0 24 24'
+                  >
+                    <path
+                      fill='currentColor'
+                      d='M17.6 18L8 8.4V17H6V5h12v2H9.4l9.6 9.6z'></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>

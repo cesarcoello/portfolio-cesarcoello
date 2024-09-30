@@ -50,7 +50,7 @@
     <!-- Modal del menú hamburguesa -->
     <div
       id='menuModal'
-      class='modal fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center text-center'
+      class='modal fixed inset-0 bg-black bg-opacity-95 z-50 flex items-end justify-start text-center p-14'
     >
       <div class='flex flex-col items-start space-y-6'>
         <button
@@ -91,7 +91,7 @@
         >
           <!-- Imagen del avatar con borde -->
           <div
-            class='rounded-full w-28 h-28 overflow-hidden border-4 border-cyan-400'
+            class='rounded-full w-24 md:w-28 h-24 md:h-28 overflow-hidden border-4 border-cyan-400'
           >
             <img
               src='../../public/avatar.jpg'
@@ -101,7 +101,7 @@
           </div>
 
           <!-- Texto principal -->
-          <p class='text-4xl md:text-6xl font-medium mb-4'>
+          <p class='text-3xl md:text-6xl font-medium mb-4'>
             Soy <span class='text-white'>César</span>, un desarrollador web
             comprometido con ayudar a su equipo a alcanzar sus metas y lograr el <span
               class='text-gray-400'>éxito de sus proyectos.</span
@@ -113,14 +113,14 @@
         <div
           class='rounded-3xl p-8 col-span-2 md:col-span-2 row-span-4 md:row-span-9 bg-stone-900 shadow-md flex flex-col justify-center items-center text-center'
         >
-          <h2 class='text-5xl font-semibold mb-4 text-white'>
+          <h2 class='text-3xl md:text-5xl font-medium mb-4 text-white'>
             ¿Quieres empezar un proyecto juntos?
           </h2>
 
           <!-- Enlace al correo con estilo de botón -->
           <a
             href='mailto:cesarcoellomr@gmail.com'
-            class='text-2xl text-white font-semibold bg-teal-500 hover:bg-teal-600 px-6 py-4 rounded-full mt-4 shadow-md transition-all duration-300'
+            class='text-xl sm:text-lg md:text-xl text-white font-medium bg-teal-500 hover:bg-teal-600 px-6 py-6 rounded-full mt-4 shadow-md transition-all duration-300'
           >
             cesarcoellomr@gmail.com
           </a>
@@ -148,13 +148,13 @@
         <div
           class='col-span-1 rounded-full md:col-span-1 row-span-1 bg-stone-900 shadow-md flex items-center justify-center'
         >
-          <p class='text-white'>CV</p>
+          <p class='text-white'>Ligth/Dark</p>
         </div>
 
         <div
           class='col-span-1 rounded-full md:col-span-1 row-span-1 bg-stone-900 shadow-md flex items-center justify-center'
         >
-          <p class='text-white'>Blog</p>
+          <p class='text-white'>CV</p>
         </div>
       </section>
 
@@ -163,15 +163,125 @@
       >
         <!-- Sección de tecnologias y herramientas -->
         <div
-          class='rounded-3xl p-8 col-span-2 md:col-span-2 row-span-1 bg-stone-800 text-white shadow-md flex flex-col justify-center items-start'
+          class='rounded-3xl px-8 col-span-2 md:col-span-2 row-span-1 bg-stone-900 text-white shadow-md flex flex-col justify-center items-start'
         >
-          <h1 class='text-6xl font-bold mb-4'>Tools</h1>
-          <p class='text-2xl'>
-            Desarrollador web comprometido a alcanzar metas y proyectos
-            exitosos.
-          </p>
+          <h1 class='text-5xl font-medium mb-4 text-white'>
+            Tecnologías y <span class='text-gray-400'>herramientas</span>
+          </h1>
+
+          <!-- Contenedor de la cuadrícula de tecnologías -->
+          <div class='grid grid-cols-4 gap-4 mt-4'>
+            <!-- Aquí irían los iconos de las tecnologías -->
+            <div
+              class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
+            >
+              <img src='stack/html.svg' alt='HTML5' class='h-12 w-12' />
+            </div>
+
+            <div
+              class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
+            >
+              <img src='stack/css.svg' alt='CSS3' class='h-12 w-12' />
+            </div>
+
+            <div
+              class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
+            >
+              <img
+                src='stack/javascript.svg'
+                alt='JavaScript'
+                class='h-12 w-12'
+              />
+            </div>
+
+            <div
+              class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
+            >
+              <img
+                src='stack/bootstrap.svg'
+                alt='Bootstrap'
+                class='h-12 w-12'
+              />
+            </div>
+
+            <!-- Fila 2 -->
+            <div
+              class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
+            >
+              <img
+                src='stack/tailwind.svg'
+                alt='TailwindCSS'
+                class='h-12 w-12'
+              />
+            </div>
+
+            <div
+              class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
+            >
+              <img src='stack/astro.svg' alt='Astro' class='h-12 w-12' />
+            </div>
+
+            <div
+              class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
+            >
+              <img src='stack/react.svg' alt='React' class='h-12 w-12' />
+            </div>
+
+            <div
+              class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
+            >
+              <img src='stack/mysql.svg' alt='MySQL' class='h-12 w-12' />
+            </div>
+
+            <!-- Fila 3 -->
+            <div
+              class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
+            >
+              <img
+                src='stack/sqlserver.svg'
+                alt='SQL Server'
+                class='h-12 w-12'
+              />
+            </div>
+
+            <div
+              class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
+            >
+              <img src='stack/plsql.svg' alt='PostgreSQL' class='h-12 w-12' />
+            </div>
+
+            <div
+              class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
+            >
+              <img
+                src='stack/sqldeveloper.svg'
+                alt='MongoDB'
+                class='h-12 w-12'
+              />
+            </div>
+
+            <div
+              class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
+            >
+              <img src='stack/figma.svg' alt='Figma' class='h-12 w-12' />
+            </div>
+
+            <!-- Fila 4 -->
+            <div
+              class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
+            >
+              <img src='stack/git.svg' alt='Git' class='h-12 w-12' />
+            </div>
+
+            <div
+              class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
+            >
+              <img src='stack/github.svg' alt='GitHub' class='h-12 w-12' />
+            </div>
+          </div>
         </div>
-        <!-- Sección de tecnologias y herramientas -->
+
+        <!-- Sección de sobre mi -->
         <div
           class='rounded-3xl p-8 col-span-2 md:col-span-3 row-span-1 bg-stone-700 shadow-md flex flex-col justify-center items-center text-center'
         >

@@ -164,26 +164,31 @@
       </section>
 
       <section
-        class='bg-gray-950 min-h-screen h-4/5 md:h-3/4 grid grid-cols-5 md:grid-cols-2 grid-rows-19 md:grid-rows-6 gap-4 p-4 rounded-3xl max-w-screen-2xl'
+        class='bg-gray-950 min-h-screen h-screen grid grid-cols-5 md:grid-cols-2 grid-rows-19 md:grid-rows-6 gap-4 p-4 rounded-3xl max-w-screen-2xl'
       >
         <!-- Sección de proyectos -->
         <div
-          class='rounded-3xl col-span-5 md:col-span-2 row-span-1 md:row-span-1 px-8 py-2 bg-gray-800 text-white shadow-md flex flex-col justify-center items-start'
+          class='rounded-3xl col-span-5 md:col-span-2 row-span-1 px-8 py-2 bg-gray-800 text-white shadow-md flex flex-col justify-center items-start min-h-[50px]'
         >
           <h1 class='text-xl font-bold mb-4'>Proyectos</h1>
           <h3 class='text-xl font-bold mb-4'>Enlace</h3>
         </div>
 
+        <!-- Proyecto 1 -->
         <div
           class='rounded-3xl col-span-5 md:col-span-1 row-span-6 md:row-span-5 p-8 bg-gray-800 text-white shadow-md flex flex-col justify-center items-start'
         >
           <h1 class='text-xl font-bold mb-4'>Proyecto 1</h1>
         </div>
+
+        <!-- Proyecto 2 -->
         <div
           class='rounded-3xl col-span-5 md:col-span-1 row-span-6 md:row-span-2 p-8 bg-gray-800 text-white shadow-md flex flex-col justify-center items-start'
         >
           <h1 class='text-xl font-bold mb-4'>Proyecto 2</h1>
         </div>
+
+        <!-- Proyecto 3 -->
         <div
           class='rounded-3xl col-span-5 md:col-span-1 row-span-6 md:row-span-3 p-8 bg-gray-800 text-white shadow-md flex flex-col justify-center items-start'
         >
@@ -192,43 +197,73 @@
       </section>
     </main>
 
-    <style>
-      /* Estilo para ocultar la modal inicialmente */
-      .modal {
-        display: none;
-      }
+    <footer
+      class='bg-gray-900 px-8 py-4 mt-2 flex justify-between items-center rounded-full w-full max-w-screen-xl mx-auto'
+    >
+      <!-- Texto o Título -->
+      <h1 class='text-white text-lg font-bold'>César Coello.</h1>
 
-      /* Mostrar la modal cuando esté activa */
-      .modal.active {
-        display: flex;
-      }
+      <!-- Copyright -->
+      <p class='text-gray-400'>&copy; 2024</p>
 
-      body {
-        margin: 0; /* Asegúrate de que no haya márgenes por defecto */
-      }
-
-      header {
-        height: 60px; /* Establece la altura del header */
-      }
-
-      section {
-        min-height: calc(100vh - 70px); /* Resta la altura del header */
-      }
-    </style>
-    <script>
-      const hamburger = document.getElementById("hamburger");
-      const menuModal = document.getElementById("menuModal");
-      const closeMenu = document.getElementById("closeMenu");
-
-      // Abrir menú hamburguesa
-      hamburger?.addEventListener("click", () => {
-        menuModal?.classList.add("active");
-      });
-
-      // Cerrar menú hamburguesa
-      closeMenu?.addEventListener("click", () => {
-        menuModal?.classList.remove("active");
-      });
-    </script>
+      <!-- Flecha para volver al inicio -->
+      <a
+        href='#inicio'
+        class='text-white hover:text-gray-400 transition duration-200'
+      >
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          class='h-6 w-6'
+          fill='none'
+          viewBox='0 0 24 24'
+          stroke='currentColor'
+        >
+          <path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            stroke-width='2'
+            d='M5 15l7-7 7 7'></path>
+        </svg>
+      </a>
+    </footer>
   </body>
 </html>
+
+<style>
+  /* Estilo para ocultar la modal inicialmente */
+  .modal {
+    display: none;
+  }
+
+  /* Mostrar la modal cuando esté activa */
+  .modal.active {
+    display: flex;
+  }
+
+  body {
+    margin: 0; /* Asegúrate de que no haya márgenes por defecto */
+  }
+
+  header {
+    height: 60px; /* Establece la altura del header */
+  }
+
+  section {
+    min-height: calc(100vh - 70px); /* Resta la altura del header */
+  }
+</style>
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const menuModal = document.getElementById("menuModal");
+  const closeMenu = document.getElementById("closeMenu");
+
+  // Abrir menú hamburguesa
+  hamburger?.addEventListener("click", () => {
+    menuModal?.classList.add("active");
+  });
+
+  // Cerrar menú hamburguesa
+  closeMenu?.addEventListener("click", () => {
+    menuModal?.classList.remove("active");
+  });
+</script>

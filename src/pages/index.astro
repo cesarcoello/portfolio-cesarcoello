@@ -87,12 +87,25 @@
       >
         <!-- Sección de presentación con nombre y título -->
         <div
-          class='rounded-3xl p-8 col-span-2 md:col-span-3 row-span-5 md:row-span-9 bg-stone-900 text-white shadow-md flex flex-col justify-center items-start'
+          class='rounded-3xl p-8 col-span-2 md:col-span-3 row-span-5 md:row-span-9 bg-stone-900 text-white shadow-md flex flex-col justify-center items-start space-y-4'
         >
-          <h1 class='text-6xl font-bold mb-4'>Soy César</h1>
-          <p class='text-2xl'>
-            Desarrollador web comprometido a alcanzar metas y proyectos
-            exitosos.
+          <!-- Imagen del avatar con borde -->
+          <div
+            class='rounded-full w-28 h-28 overflow-hidden border-4 border-cyan-400'
+          >
+            <img
+              src='../../public/avatar.jpg'
+              alt='Avatar'
+              class='w-full h-full object-cover'
+            />
+          </div>
+
+          <!-- Texto principal -->
+          <p class='text-4xl md:text-6xl font-medium mb-4'>
+            Soy <span class='text-white'>César</span>, un desarrollador web
+            comprometido con ayudar a su equipo a alcanzar sus metas y lograr el <span
+              class='text-gray-400'>éxito de sus proyectos.</span
+            >
           </p>
         </div>
 
@@ -100,12 +113,14 @@
         <div
           class='rounded-3xl p-8 col-span-2 md:col-span-2 row-span-4 md:row-span-9 bg-stone-900 shadow-md flex flex-col justify-center items-center text-center'
         >
-          <h2 class='text-3xl font-semibold mb-4 text-white'>
+          <h2 class='text-5xl font-semibold mb-4 text-white'>
             ¿Quieres empezar un proyecto juntos?
           </h2>
+
+          <!-- Enlace al correo con estilo de botón -->
           <a
             href='mailto:cesarcoellomr@gmail.com'
-            class='text-lg text-teal-300 hover:text-teal-400 underline'
+            class='text-2xl text-white font-semibold bg-teal-500 hover:bg-teal-600 px-6 py-4 rounded-full mt-4 shadow-md transition-all duration-300'
           >
             cesarcoellomr@gmail.com
           </a>

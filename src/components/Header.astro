@@ -1,8 +1,19 @@
 ---
+interface Props {
+  optionUno: string;
+  urlUno: string;
+  optionDos: string;
+  urlDos: string;
+  optionTres: string;
+  urlTres: string;
+}
+const { optionUno, urlUno, optionDos, urlDos, optionTres, urlTres } =
+  Astro.props;
+
 const option = [
-  { title: "Inicio", url: "#navbar" },
-  { title: "Sobre mí", url: "#about" },
-  { title: "Proyectos", url: "#projects" },
+  { title: optionUno, url: urlUno },
+  { title: optionDos, url: urlDos },
+  { title: optionTres, url: urlTres },
 ];
 ---
 

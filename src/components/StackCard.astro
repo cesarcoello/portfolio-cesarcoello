@@ -1,0 +1,21 @@
+---
+export interface Props {
+  name: string;
+  icon: string;
+}
+
+const { name, icon } = Astro.props;
+---
+
+<div
+  class='relative bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center group'
+>
+  <img src={icon} alt={name} class='h-12 w-12' />
+
+  <!-- Tooltip personalizado -->
+  <span
+    class='absolute top-0 mt-[-40px] left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-sm rounded px-3 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50'
+  >
+    {name}
+  </span>
+</div>

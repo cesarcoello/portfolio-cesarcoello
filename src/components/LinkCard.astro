@@ -1,8 +1,22 @@
 ---
 export interface Props {
   title: string;
-  href?: string;
+  url?: string;
 }
 
-const { title, href } = Astro.props;
+const { title, url } = Astro.props;
 ---
+
+<div
+  class='col-span-1 p-5 md:p-8 rounded-full md:col-span-1 row-span-1 bg-stone-900 shadow-md flex items-center justify-center'
+>
+  <a
+    href={url}
+    download='Curriculum'
+    target='_blank'
+    rel='noopener noreferrer'
+    class='text-white font-semibold'
+  >
+    {title}
+  </a>
+</div>

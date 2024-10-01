@@ -1,4 +1,6 @@
 ---
+import LinkCard from "../components/LinkCard.astro";
+
 const enlaces = [
   { title: "LinkedIn", url: "https://www.linkedin.com/in/cesarcoello" },
   { title: "GitHub", url: "https://github.com/cesarcoello" },
@@ -49,22 +51,9 @@ const enlaces = [
 
   <!-- Redes sociales o enlaces adicionales -->
 
-  {
-    enlaces.map(({ title, url }) => (
-      <div class='col-span-1 p-5 md:p-8 rounded-full md:col-span-1 row-span-1 bg-stone-900 shadow-md flex items-center justify-center'>
-        <a
-          href={url}
-          download='Curriculum'
-          target='_blank'
-          rel='noopener noreferrer'
-          class='text-white  font-semibold'
-        >
-          {title}
-        </a>
-      </div>
-    ))
-  }
+  {enlaces.map(({ title, url }) => <LinkCard title={title} url={url} />)}
 
+  <!-- Enlace Curriculum -->
   <div
     class='col-span-1 p-5 md:p-8 rounded-full md:col-span-1 row-span-1 bg-stone-900 shadow-md flex items-center justify-center'
   >
@@ -79,6 +68,7 @@ const enlaces = [
     </a>
   </div>
 
+  <!-- Enlace Mode L/D -->
   <div
     class='col-span-2 md:col-span-1 p-5 md:p-8 rounded-full row-span-1 bg-stone-900 shadow-md flex items-center justify-center'
   >

@@ -1,5 +1,7 @@
 ---
 import Paragraph from "../components/Paragraph.astro";
+import StackCard from "../components/StackCard.astro";
+import { stack } from "../data/stack";
 
 const paragraph = [
   {
@@ -43,92 +45,8 @@ const paragraph = [
     <!-- Contenedor de la cuadrícula de tecnologías -->
     <div class='grid grid-cols-4 gap-2'>
       <!-- Aquí irían los iconos de las tecnologías -->
-      <div
-        class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
-      >
-        <img src='stack/html.svg' alt='HTML5' class='h-12 w-12' />
-      </div>
 
-      <div
-        class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
-      >
-        <img src='stack/css.svg' alt='CSS3' class='h-12 w-12' />
-      </div>
-
-      <div
-        class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
-      >
-        <img src='stack/javascript.svg' alt='JavaScript' class='h-12 w-12' />
-      </div>
-
-      <div
-        class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
-      >
-        <img src='stack/bootstrap.svg' alt='Bootstrap' class='h-12 w-12' />
-      </div>
-
-      <!-- Fila 2 -->
-      <div
-        class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
-      >
-        <img src='stack/tailwind.svg' alt='TailwindCSS' class='h-12 w-12' />
-      </div>
-
-      <div
-        class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
-      >
-        <img src='stack/astro.svg' alt='Astro' class='h-12 w-12' />
-      </div>
-
-      <div
-        class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
-      >
-        <img src='stack/react.svg' alt='React' class='h-12 w-12' />
-      </div>
-
-      <div
-        class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
-      >
-        <img src='stack/mysql.svg' alt='MySQL' class='h-12 w-12' />
-      </div>
-
-      <!-- Fila 3 -->
-      <div
-        class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
-      >
-        <img src='stack/sqlserver.svg' alt='SQL Server' class='h-12 w-12' />
-      </div>
-
-      <div
-        class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
-      >
-        <img src='stack/plsql.svg' alt='PostgreSQL' class='h-12 w-12' />
-      </div>
-
-      <div
-        class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
-      >
-        <img src='stack/sqldeveloper.svg' alt='MongoDB' class='h-12 w-12' />
-      </div>
-
-      <div
-        class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
-      >
-        <img src='stack/figma.svg' alt='Figma' class='h-12 w-12' />
-      </div>
-
-      <!-- Fila 4 -->
-      <div
-        class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
-      >
-        <img src='stack/git.svg' alt='Git' class='h-12 w-12' />
-      </div>
-
-      <div
-        class='bg-stone-800 p-4 rounded-lg shadow-inner flex justify-center items-center'
-      >
-        <img src='stack/github.svg' alt='GitHub' class='h-12 w-12' />
-      </div>
+      {stack.map(({ name, icon }) => <StackCard name={name} icon={icon} />)}
     </div>
   </div>
 

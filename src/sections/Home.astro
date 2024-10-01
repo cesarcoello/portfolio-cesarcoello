@@ -1,5 +1,10 @@
 ---
-
+const enlaces = [
+  { title: "LinkedIn", url: "https://www.linkedin.com/in/cesarcoello" },
+  { title: "GitHub", url: "https://github.com/cesarcoello" },
+  { title: "Honduras", url: "https://www.google.com/maps/place/Honduras" },
+  { title: "CV", url: "/resume-cesarcoello.pdf" },
+];
 ---
 
 <section
@@ -44,34 +49,28 @@
   </div>
 
   <!-- Redes sociales o enlaces adicionales -->
-  <div
-    class='col-span-2 p-5 md:p-8 rounded-full md:col-span-1 md:row-span-1 bg-stone-900 shadow-md flex items-center justify-center'
-  >
-    <p class='text-white'>LinkedIn</p>
-  </div>
 
+  {
+    enlaces.map(({ title, url }) => (
+      <div class='col-span-1 p-5 md:p-8 rounded-full md:col-span-1 row-span-1 bg-stone-900 shadow-md flex items-center justify-center'>
+        <a
+          href={url}
+          download='Curriculum'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='text-white  font-semibold'
+        >
+          {title}
+        </a>
+      </div>
+    ))
+  }
   <div
     class='col-span-1 p-5 md:p-8 rounded-full md:col-span-1 row-span-1 bg-stone-900 shadow-md flex items-center justify-center'
   >
-    <p class='text-white'>GitHub</p>
-  </div>
-
-  <div
-    class='col-span-1 p-5 md:p-8 rounded-full md:col-span-1 row-span-1 bg-stone-900 shadow-md flex items-center justify-center'
-  >
-    <p class='text-white'>Honduras</p>
-  </div>
-
-  <div
-    class='col-span-1 p-5 md:p-8 rounded-full md:col-span-1 row-span-1 bg-stone-900 shadow-md flex items-center justify-center'
-  >
-    <p class='text-white'>Ligth/Dark</p>
-  </div>
-
-  <div
-    class='col-span-1 p-5 md:p-8 rounded-full md:col-span-1 row-span-1 bg-stone-900 shadow-md flex items-center justify-center'
-  >
-    <p class='text-white'>CV</p>
+    <a href='/' download='Curriculum' class='text-white font-semibold'>
+      Dark
+    </a>
   </div>
 </section>
 

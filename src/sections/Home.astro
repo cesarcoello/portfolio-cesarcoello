@@ -3,17 +3,16 @@ const enlaces = [
   { title: "LinkedIn", url: "https://www.linkedin.com/in/cesarcoello" },
   { title: "GitHub", url: "https://github.com/cesarcoello" },
   { title: "Honduras", url: "https://www.google.com/maps/place/Honduras" },
-  { title: "CV", url: "/resume-cesarcoello.pdf" },
 ];
 ---
 
 <section
   id='home'
-  class='grid w-full max-w-screen-2xl gap-2 py-2 grid-cols-2 grid-rows-12 md:grid-cols-5 md:grid-rows-10'
+  class='grid w-full max-w-screen-2xl gap-2 py-2 grid-cols-2 grid-rows-12 md:grid-cols-5 md:grid-rows-12'
 >
   <!-- Sección de presentación con nombre y título -->
   <div
-    class='rounded-3xl p-5 md:p-8 col-span-2 md:col-span-3 row-span-5 md:row-span-9 bg-stone-900 text-white shadow-md flex flex-col justify-center items-start space-y-4'
+    class='rounded-3xl p-5 md:p-8 col-span-2 md:col-span-3 row-span-5 md:row-span-11 bg-stone-900 text-white shadow-md flex flex-col justify-center items-start space-y-4'
   >
     <!-- Imagen del avatar con borde -->
     <div
@@ -33,7 +32,7 @@ const enlaces = [
 
   <!-- Sección de contacto -->
   <div
-    class='rounded-3xl p-5 md:p-8 col-span-2 md:col-span-2 row-span-4 md:row-span-9 bg-stone-900 shadow-md flex flex-col justify-center items-center text-center'
+    class='rounded-3xl p-5 md:p-8 col-span-2 md:col-span-2 row-span-4 md:row-span-11 bg-stone-900 shadow-md flex flex-col justify-center items-center text-center'
   >
     <h2 class='text-2xl md:text-4xl font-medium mb-4 text-white'>
       ¿Quieres empezar un proyecto juntos?
@@ -65,12 +64,25 @@ const enlaces = [
       </div>
     ))
   }
+
   <div
     class='col-span-1 p-5 md:p-8 rounded-full md:col-span-1 row-span-1 bg-stone-900 shadow-md flex items-center justify-center'
   >
-    <a href='/' download='Curriculum' class='text-white font-semibold'>
-      Dark
+    <a
+      href='public/resume-cesarcoello.pdf'
+      download='resume-cesar-coello'
+      target='_blank'
+      rel='noopener noreferrer'
+      class='text-white font-semibold'
+    >
+      CV
     </a>
+  </div>
+
+  <div
+    class='col-span-2 md:col-span-1 p-5 md:p-8 rounded-full row-span-1 bg-stone-900 shadow-md flex items-center justify-center'
+  >
+    <a href='/' class='text-white font-semibold'> Light/Dark </a>
   </div>
 </section>
 

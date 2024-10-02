@@ -22,7 +22,7 @@ const option = [
   class='bg-stone-900 px-5 md:px-8 py-4 mt-2 flex justify-between items-center rounded-full w-full max-w-screen-xl mx-auto'
 >
   <!-- Logo o Título -->
-  <a href='/' class='text-white text-lg font-semibold'>César Coello.</a>
+  <a href='/' class='text-white text-lg font-semibold'>César Coello</a>
 
   <!-- Menú de navegación para pantallas grandes -->
   <nav class='space-x-20 hidden md:flex'>
@@ -41,7 +41,8 @@ const option = [
   <!-- Menú hamburguesa en móvil -->
   <button
     id='hamburger'
-    class='text-white text-2xl block md:hidden focus:outline-none'
+    class='text-white text-2xl block md:hidden focus:outline-none z-50'
+    aria-label='Open menu'
   >
     &#9776;
   </button>
@@ -52,10 +53,11 @@ const option = [
   id='menuModal'
   class='modal fixed inset-0 bg-black bg-opacity-100 z-50 flex items-end justify-start text-center p-14'
 >
-  <div class='flex flex-col items-start space-y-6'>
+  <div class='flex flex-col items-start space-y-6 relative'>
     <button
       id='closeMenu'
-      class='text-white text-6xl absolute top-8 right-8 focus:outline-none'
+      class='text-white text-6xl absolute top-8 right-8 focus:outline-none z-50'
+      aria-label='Close menu'
     >
       &times;
     </button>
@@ -64,7 +66,7 @@ const option = [
       option.map(({ title, url }) => (
         <a
           href={url}
-          class='text-white text-3xl md:text-6xl font-semibold hover:text-gray-400 transition duration-200'
+          class='menu-option text-white text-3xl md:text-6xl font-semibold hover:text-gray-400 transition duration-200'
         >
           {title}
         </a>
@@ -72,6 +74,7 @@ const option = [
     }
   </div>
 </div>
+
 <style>
   /* Estilo para ocultar la modal inicialmente */
   .modal {
@@ -83,18 +86,30 @@ const option = [
     display: flex;
   }
 </style>
+
 <script>
   const hamburger = document.getElementById("hamburger");
   const menuModal = document.getElementById("menuModal");
   const closeMenu = document.getElementById("closeMenu");
+  const menuOptions = document.querySelectorAll(".menu-option");
 
   // Abrir menú hamburguesa
   hamburger?.addEventListener("click", () => {
     menuModal?.classList.add("active");
+    document.body.style.overflow = "hidden"; // Evitar el scroll en el fondo
   });
 
   // Cerrar menú hamburguesa
   closeMenu?.addEventListener("click", () => {
     menuModal?.classList.remove("active");
+    document.body.style.overflow = "auto"; // Restaurar el scroll en el fondo
+  });
+
+  // Cerrar modal al seleccionar una opción del menú
+  menuOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+      menuModal?.classList.remove("active");
+      document.body.style.overflow = "auto"; // Restaurar el scroll
+    });
   });
 </script>

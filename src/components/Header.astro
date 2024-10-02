@@ -89,29 +89,36 @@ const option = [
   }
 </style>
 
-<script>
-  const hamburger = document.getElementById("hamburger");
-  const menuModal = document.getElementById("menuModal");
-  const closeMenu = document.getElementById("closeMenu");
-  const menuOptions = document.querySelectorAll(".menu-option");
+<!-- Aquí va el script de Astro para manejar el comportamiento -->
+<script is:inline>
+  function initMenu() {
+    const hamburger = document.getElementById("hamburger");
+    const menuModal = document.getElementById("menuModal");
+    const closeMenu = document.getElementById("closeMenu");
+    const menuOptions = document.querySelectorAll(".menu-option");
 
-  // Abrir menú hamburguesa
-  hamburger?.addEventListener("click", () => {
-    menuModal?.classList.add("active");
-    document.body.style.overflow = "hidden"; // Evitar el scroll en el fondo
-  });
-
-  // Cerrar menú hamburguesa
-  closeMenu?.addEventListener("click", () => {
-    menuModal?.classList.remove("active");
-    document.body.style.overflow = "auto"; // Restaurar el scroll en el fondo
-  });
-
-  // Cerrar modal al seleccionar una opción del menú
-  menuOptions.forEach((option) => {
-    option.addEventListener("click", () => {
-      menuModal?.classList.remove("active");
-      document.body.style.overflow = "auto"; // Restaurar el scroll
+    // Abrir menú hamburguesa
+    hamburger?.addEventListener("click", () => {
+      menuModal?.classList.add("active");
+      document.body.style.overflow = "hidden"; // Evitar el scroll en el fondo
     });
-  });
+
+    // Cerrar menú hamburguesa
+    closeMenu?.addEventListener("click", () => {
+      menuModal?.classList.remove("active");
+      document.body.style.overflow = "auto"; // Restaurar el scroll en el fondo
+    });
+
+    // Cerrar modal al seleccionar una opción del menú
+    menuOptions.forEach((option) => {
+      option.addEventListener("click", () => {
+        menuModal?.classList.remove("active");
+        document.body.style.overflow = "auto"; // Restaurar el scroll
+      });
+    });
+  }
+
+  // Asegurar que el script se ejecute cada vez que se carga la página
+  document.addEventListener("astro:after-swap", initMenu);
+  document.addEventListener("DOMContentLoaded", initMenu);
 </script>

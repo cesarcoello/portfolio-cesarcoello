@@ -12,6 +12,6 @@ export const stack = [
     {name:'SQLDeveloper', icon:"/stack/sqldeveloper.svg" },
     {name:'Figma', icon:"/stack/figma.svg" },
     {name:'Git', icon:"/stack/git.svg" },
-    {name:'Git Hub', icon:"/stack/github.svg" },
+    {name:'GitHub', icon:"/stack/github.svg" },
    
 ]

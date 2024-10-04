@@ -10,21 +10,21 @@ const enlaces = [
 
 <section
   id='home'
-  class='grid w-full max-w-screen-2xl gap-2 py-2 grid-cols-2 grid-rows-12 md:grid-cols-5 md:grid-rows-10'
+  class='grid h-1/4 md:h-full w-full max-w-screen-2xl gap-2 pt-2 grid-cols-2 grid-rows-12 md:grid-cols-5 md:grid-rows-10'
 >
   <!-- Sección de presentación con nombre y título -->
   <div
-    class='rounded-3xl p-5 md:p-8 col-span-2 md:col-span-3 row-span-5 md:row-span-9 bg-stone-900 text-white shadow-md flex flex-col justify-center items-start space-y-4'
+    class='rounded-3xl p-5 md:p-8 col-span-2 md:col-span-3 row-span-6 md:row-span-9 bg-stone-900 text-white shadow-md flex flex-col justify-center items-start space-y-4'
   >
     <!-- Imagen del avatar con borde -->
     <div
-      class='rounded-full w-24 md:w-28 h-24 md:h-28 overflow-hidden border-4 border-cyan-400'
+      class='rounded-full w-24 md:w-28 h-24 md:h-28 overflow-hidden border-4 border-cyan-500'
     >
       <img src='avatar.jpg' alt='Avatar' class='w-full h-full object-cover' />
     </div>
 
     <!-- Texto principal -->
-    <p class='text-3xl md:text-5xl font-medium mb-4'>
+    <p class='text-2xl md:text-5xl font-medium mb-4'>
       Soy <span class='text-white'>César</span>, un desarrollador web
       comprometido con ayudar a su equipo a alcanzar sus metas y lograr el <span
         class='text-gray-400'>éxito de sus proyectos.</span
@@ -34,16 +34,16 @@ const enlaces = [
 
   <!-- Sección de contacto -->
   <div
-    class='rounded-3xl p-5 md:p-8 col-span-2 md:col-span-2 row-span-4 md:row-span-9 bg-stone-900 shadow-md flex flex-col justify-center items-center text-center'
+    class='rounded-3xl p-5 md:p-8 col-span-2 md:col-span-2 row-span-3 md:row-span-9 bg-stone-900 shadow-md flex flex-col justify-center items-center text-center'
   >
     <h2 class='text-2xl md:text-4xl font-medium mb-4 text-white'>
-      ¿Quieres empezar un <span class='font-semibold'>proyecto</span> juntos?
+      ¿Quieres empezar un <span class=''>proyecto</span> juntos?
     </h2>
 
     <!-- Enlace al correo con estilo de botón -->
     <a
       href='mailto:cesarcoellomr@gmail.com'
-      class='text-base sm:text-lg text-white font-medium bg-cyan-500 hover:bg-cyan-600 p-4 md:p-6 rounded-full mt-4 shadow-md transition-all duration-300'
+      class='text-base sm:text-lg text-white font-medium bg-cyan-600 hover:bg-cyan-700 p-4 md:p-6 rounded-full mt-4 shadow-md transition-all duration-300 hover:text-lg md:hover:text-xl'
     >
       cesarcoellomr@gmail.com
     </a>
@@ -55,7 +55,7 @@ const enlaces = [
 
   <!-- Enlace Curriculum -->
   <div
-    class='col-span-1 p-5 md:p-8 rounded-full md:col-span-1 row-span-1 bg-stone-900 shadow-md flex items-center justify-center'
+    class='col-span-1 p-5 md:p-8 rounded-full md:col-span-1 row-span-1 bg-stone-900 shadow-md flex items-center justify-center hover:text-lg hover:text-gray-400'
   >
     <a
       href='public/resume-cesarcoello.pdf'
@@ -70,7 +70,7 @@ const enlaces = [
 
   <!-- Enlace Mode L/D -->
   <div
-    class='col-span-2 md:col-span-1 p-5 md:p-8 rounded-full row-span-1 bg-stone-900 shadow-md flex items-center justify-center'
+    class='col-span-2 md:col-span-1 p-5 md:p-8 rounded-full row-span-1 bg-stone-900 shadow-md flex items-center justify-center hover:text-lg hover:text-gray-400'
   >
     <a href='/' class='text-white font-semibold'> Light/Dark </a>
   </div>

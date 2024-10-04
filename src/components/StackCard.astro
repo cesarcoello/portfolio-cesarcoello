@@ -8,7 +8,7 @@ const { name, icon } = Astro.props;
 ---
 
 <div
-  class='relative p-4 rounded-lg shadow-inner flex justify-center items-center group aspect-square w-full max-w-[100px]'
+  class='relative p-4 md:p-3 rounded-lg shadow-inner flex justify-center items-center group aspect-square w-full md:max-w-[100px]'
 >
   <!-- Fondo con opacidad -->
   <div
@@ -16,7 +16,11 @@ const { name, icon } = Astro.props;
   >
   </div>
 
-  <img src={icon} alt={name} class='h-3/4 w-3/4 z-10' />
+  <img
+    src={icon}
+    alt={name}
+    class='h-full w-full z-10 transition-transform duration-300 hover:scale-110'
+  />
 
   <!-- Tooltip personalizado -->
   <span

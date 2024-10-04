@@ -31,9 +31,7 @@ const { title, optionUno, urlUno, optionDos, urlDos, optionTres, urlTres } =
 
     <ViewTransitions />
   </head>
-  <body
-    class='bg-black text-white font-poppins h-screen flex flex-col px-2 md:px-8'
-  >
+  <body class='bg-black text-white font-poppins flex flex-col px-2 md:px-8'>
     <Header
       optionUno={optionUno}
       urlUno={urlUno}
@@ -43,9 +41,7 @@ const { title, optionUno, urlUno, optionDos, urlDos, optionTres, urlTres } =
       urlTres={urlTres}
     />
     <!-- Contenido principal de mi Landing Page -->
-    <main
-      class='flex-grow items-center justify-center w-full max-w-screen-xl mx-auto'
-    >
+    <main class='w-full max-w-screen-xl mx-auto'>
       <slot />
     </main>
 

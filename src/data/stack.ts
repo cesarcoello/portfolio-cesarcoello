@@ -13,4 +13,5 @@ export const stack = [
     {name:'Figma', icon:"/stack/figma.svg" },
     {name:'Git', icon:"/stack/git.svg" },
     {name:'Git Hub', icon:"/stack/github.svg" },
+   
 ]

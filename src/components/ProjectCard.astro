@@ -13,7 +13,7 @@ const { title, description, img, href } = Astro.props;
   <!-- Imagen de fondo con opacidad -->
   <div
     class='absolute inset-0 bg-cover bg-center bg-opacity-50 rounded-3xl'
-    style={`background-image: url(${img}); opacity: 0.4`}
+    style={`background-image: url(${img}); opacity: 0.5`}
   >
   </div>
 
@@ -22,10 +22,10 @@ const { title, description, img, href } = Astro.props;
     <!-- Título y Descripción -->
     <div>
       <div>
-        <h1 class='text-xl md:text-5xl font-semibold mb-2 shadow-sm'>
+        <h1 class='text-xl md:text-5xl font-semibold mb-2 text-shadow'>
           {title}
         </h1>
-        <p class='text-lg md:text-lg mb-2 shadow-sm'>
+        <p class='text-md md:text-lg mb-2 text-shadow'>
           {description}
         </p>
       </div>

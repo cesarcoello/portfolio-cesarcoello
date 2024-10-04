@@ -36,17 +36,24 @@ const paragraph = [
 >
   <!-- Sección de tecnologias y herramientas -->
   <div
-    class='rounded-3xl p-5 md:p-8 col-span-2 md:col-span-2 row-span-1 bg-stone-900 text-white shadow-md flex flex-col justify-center items-center'
+    class='relative rounded-3xl p-5 md:p-8 col-span-2 md:col-span-2 row-span-1 bg-stone-900 text-white shadow-md flex flex-col justify-center items-center'
   >
-    <h1 class='text-3xl md:text-5xl font-medium mb-4 text-white text-center'>
-      Tecnologías y <span class='text-gray-400'>herramientas</span>
-    </h1>
+    <!-- Fondo con opacidad -->
+    <div
+      class='absolute inset-0 bg-gradient-to-r from-cyan-500 to-indigo-700 opacity-40 rounded-3xl pointer-events-none'
+    >
+    </div>
 
-    <!-- Contenedor de la cuadrícula de tecnologías -->
-    <div class='grid grid-cols-4 gap-2'>
-      <!-- Aquí irían los iconos de las tecnologías -->
+    <!-- Contenido que no será afectado por la opacidad -->
+    <div class='relative z-10'>
+      <h1 class='text-3xl md:text-5xl font-medium mb-4 text-white text-center'>
+        Tecnologías y <span class='text-gray-200'>herramientas</span>
+      </h1>
 
-      {stack.map(({ name, icon }) => <StackCard name={name} icon={icon} />)}
+      <!-- Contenedor de la cuadrícula de tecnologías -->
+      <div class='grid grid-cols-4 md:grid-cols-5 gap-2'>
+        {stack.map(({ name, icon }) => <StackCard name={name} icon={icon} />)}
+      </div>
     </div>
   </div>
 

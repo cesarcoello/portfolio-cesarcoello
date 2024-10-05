@@ -7,8 +7,14 @@ interface ProjectEntry {
   slug: string;
   data: {
     title: string;
+    subtitle: string;
+    summary: string;
     description: string;
-    img: string;
+    date: string;
+    frontImg: string;
+    bgImg: string;
+    demoUrl: string;
+    repoUrl: string;
   };
   render: () => Promise<{ Content: any; headings: any[] }>;
 }

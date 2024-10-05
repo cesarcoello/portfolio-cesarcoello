@@ -6,8 +6,8 @@ interface Project {
   slug: string;
   data: {
     title: string;
-    description: string;
-    img: string;
+    summary: string;
+    bgImg: string;
   };
 }
 const projects: Project[] = await getCollection("projects");
@@ -24,8 +24,8 @@ const projects: Project[] = await getCollection("projects");
       projects.map((project) => (
         <ProjectCard
           title={project.data.title}
-          description={project.data.description}
-          img={project.data.img}
+          description={project.data.summary}
+          img={project.data.bgImg}
           href={`/projects/${project.slug}`}
         />
       ))

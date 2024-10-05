@@ -44,20 +44,57 @@ const { Content, headings } = await entry.render();
   optionTres='Proyectos'
   urlTres='/#projects'
 >
-  <section id='' class='bg-stone-900 p-8 mt-2 rounded-3xl max-w-screen-2xl'>
-    <div
-      class='rounded-3xl col-span-5 md:col-span-1 row-span-1 text-white md:flex md:justify-between md:items-center min-h-[50px]'
+  <section
+    id=''
+    class='bg-stone-900 p-8 pt-2 mt-2 rounded-3xl max-w-screen-2xl flex flex-col items-center'
+  >
+    <a
+      href='/#projects'
+      class='text-md md:text-lg font-regular hover:font-medium text-stone-400 m-0 p-2 md:p-4 rounded-3xl hover:bg-stone-700 hover:text-white ml-auto self-end'
     >
-      <h1 class='text-3xl md:text-5xl font-semibold mb-2'>
-        {entry.data.title}
-      </h1>
+      &#8592; Regresar
+    </a>
+
+    <p
+      class='font-semibold mt-4 md:my-4 py-1 px-6 text-center bg-white text-black rounded-full'
+    >
+      {entry.data.date}
+    </p>
+
+    <h1 class='text-center text-3xl md:text-6xl font-semibold mt-4 mb-2'>
+      {entry.data.title}
+    </h1>
+
+    <h2 class='text-center text-stone-300 text-xl md:text-3xl font-medium mb-2'>
+      {entry.data.subtitle}
+    </h2>
+
+    <div class='flex justify-around space-x-4'>
       <a
-        href='/#projects'
-        class='text-lg font-regular text-gray-400 mb-4 underline'
+        href={entry.data.demoUrl}
+        class='font-medium md:my-4 py-1 px-6 md:text-xl text-center bg-stone-500 hover:bg-stone-700 text-white rounded-full'
+        >Ver Demo</a
       >
-        &#8592; Regresar
-      </a>
+
+      <a
+        href={entry.data.repoUrl}
+        class='font-medium md:my-4 py-1 px-6 text-center md:text-xl bg-stone-500 hover:bg-stone-700 text-white rounded-full'
+        >Ver Repo</a
+      >
     </div>
+
+    <p class='text-left text-base md:text-xl py-4 text-stone-50'>
+      {entry.data.description}
+    </p>
+
+    <div class='overflow-hidden rounded-lg'>
+      <img
+        class='max-w-full h-auto transition-transform duration-300 ease-in-out transform hover:scale-105'
+        src={entry.data.frontImg}
+        alt={`Mockup de ${entry.data.title}`}
+      />
+    </div>
+
     <article class='prose md:prose-md text-xs md:text-xl'>
       <Content />
       <!-- Renderiza el contenido del archivo .mdx -->
@@ -65,54 +102,17 @@ const { Content, headings } = await entry.render();
   </section>
 
   <style is:global>
-    .prose h1 {
-      @apply text-3xl font-bold text-white mb-4 mt-8;
-    }
     .prose h2 {
-      @apply text-2xl font-semibold text-white mb-4 mt-8;
-    }
-    .prose h3 {
-      @apply text-xl font-semibold text-white mb-3 mt-6;
-    }
-    .prose p {
-      @apply mb-4 text-white;
-    }
-    .prose ul {
-      @apply list-disc list-inside mb-4 text-white;
-    }
-    .prose ol {
-      @apply list-decimal list-inside mb-4 text-white;
-    }
-    .prose li {
-      @apply mb-2 text-white;
+      @apply text-xl md:text-2xl font-semibold text-stone-50 mb-4 mt-8;
     }
     .prose strong {
-      @apply text-white;
+      @apply text-lg md:text-xl font-bold text-stone-50;
     }
-    .prose a {
-      @apply text-white hover:text-gray-300 underline;
+    .prose p {
+      @apply text-base md:text-xl mb-4 text-stone-50;
     }
-    .prose code {
-      @apply bg-white text-black px-1 py-0.5 rounded;
-    }
-    .prose pre {
-      @apply bg-gray-800 p-4 rounded-lg overflow-x-auto;
-    }
-    .prose pre code {
-      @apply bg-transparent text-white;
-    }
-    .prose blockquote {
-      @apply border-l-4 border-gray-600 pl-4 italic text-white;
-    }
-    .prose table {
-      @apply w-full border-collapse border border-gray-600 mb-4;
-    }
-    .prose th,
-    .prose td {
-      @apply border border-gray-600 p-2 text-white;
-    }
-    .prose th {
-      @apply bg-gray-700 font-semibold;
+    .prose ul {
+      @apply text-base md:text-xl list-disc list-inside mb-4 text-stone-50;
     }
   </style>
 </MainLayout>

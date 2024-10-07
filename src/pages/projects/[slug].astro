@@ -11,6 +11,7 @@ interface ProjectEntry {
     summary: string;
     description: string;
     date: string;
+    links: boolean;
     frontImg: string;
     bgImg: string;
     demoUrl: string;
@@ -69,23 +70,29 @@ const { Content, headings } = await entry.render();
       {entry.data.subtitle}
     </h2>
 
-    <div class='flex justify-around space-x-4'>
-      <a
-        href={entry.data.demoUrl}
-        target='_blank'
-        rel='noopener noreferrer'
-        class='font-medium md:my-4 py-1 px-6 md:text-xl text-center bg-stone-500 hover:bg-stone-700 text-white rounded-full'
-        >Ver Demo</a
-      >
+    {
+      entry.data.links && (
+        <div class='flex justify-around space-x-4'>
+          <a
+            href={entry.data.demoUrl}
+            target='_blank'
+            rel='noopener noreferrer'
+            class='font-medium md:my-4 py-1 px-6 md:text-xl text-center bg-stone-500 hover:bg-stone-700 text-white rounded-full'
+          >
+            Ver Demo
+          </a>
 
-      <a
-        href={entry.data.repoUrl}
-        target='_blank'
-        rel='noopener noreferrer'
-        class='font-medium md:my-4 py-1 px-6 text-center md:text-xl bg-stone-500 hover:bg-stone-700 text-white rounded-full'
-        >Ver Repo</a
-      >
-    </div>
+          <a
+            href={entry.data.repoUrl}
+            target='_blank'
+            rel='noopener noreferrer'
+            class='font-medium md:my-4 py-1 px-6 text-center md:text-xl bg-stone-500 hover:bg-stone-700 text-white rounded-full'
+          >
+            Ver Repo
+          </a>
+        </div>
+      )
+    }
 
     <p class='text-left text-base md:text-xl py-4 text-stone-50'>
       {entry.data.description}

@@ -4,17 +4,16 @@ import LinkCard from "../components/LinkCard.astro";
 const enlaces = [
   { title: "LinkedIn", url: "https://www.linkedin.com/in/cesarcoello" },
   { title: "GitHub", url: "https://github.com/cesarcoello" },
-  { title: "Honduras", url: "https://www.google.com/maps/place/Honduras" },
 ];
 ---
 
 <section
   id='home'
-  class='grid h-1/4 md:h-full w-full max-w-screen-2xl gap-2 pt-2 grid-cols-2 grid-rows-12 md:grid-cols-5 md:grid-rows-10'
+  class='grid h-1/4 md:h-full w-full max-w-screen-2xl gap-2 pt-2 grid-cols-2 grid-rows-12 md:grid-cols-9 md:grid-rows-10'
 >
   <!-- Sección de presentación con nombre y título -->
   <div
-    class='rounded-3xl p-5 md:p-8 col-span-2 md:col-span-3 row-span-6 md:row-span-9 bg-stone-900 text-white shadow-md flex flex-col justify-center items-start space-y-4'
+    class='rounded-3xl p-5 md:p-8 col-span-2 md:col-span-5 row-span-7 md:row-span-9 bg-stone-900 text-white shadow-md flex flex-col justify-center items-start space-y-4'
   >
     <!-- Imagen del avatar con borde -->
     <div
@@ -24,7 +23,7 @@ const enlaces = [
     </div>
 
     <!-- Texto principal -->
-    <p class='text-2xl sm:text-4xl md:text-5xl font-medium mb-4'>
+    <p class='text-3xl sm:text-4xl md:text-5xl font-medium mb-4'>
       Soy <span class='text-white'>César</span>, un desarrollador web
       comprometido con ayudar a su equipo a alcanzar sus metas y lograr el <span
         class='text-gray-400'>éxito de sus proyectos.</span
@@ -34,7 +33,7 @@ const enlaces = [
 
   <!-- Sección de contacto -->
   <div
-    class='rounded-3xl p-5 md:p-8 col-span-2 md:col-span-2 row-span-3 md:row-span-9 bg-stone-900 shadow-md flex flex-col justify-center items-center text-center'
+    class='rounded-3xl p-5 md:p-8 col-span-2 md:col-span-4 row-span-3 md:row-span-9 bg-stone-900 shadow-md flex flex-col justify-center items-center text-center'
   >
     <h2
       class='text-xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-4 text-white'
@@ -57,7 +56,7 @@ const enlaces = [
 
   <!-- Enlace Curriculum -->
   <div
-    class='col-span-1 p-5 md:p-8 rounded-full md:col-span-1 row-span-1 bg-stone-900 shadow-md flex items-center justify-center hover:text-lg hover:text-gray-400'
+    class='col-span-2 p-5 md:p-8 rounded-full md:col-span-3 row-span-1 bg-stone-900 shadow-md flex items-center justify-center hover:text-lg hover:text-gray-400'
   >
     <a
       href='public/resume-cesarcoello.pdf'
@@ -71,11 +70,11 @@ const enlaces = [
   </div>
 
   <!-- Enlace Mode L/D -->
-  <div
-    class='col-span-2 md:col-span-1 p-5 md:p-8 rounded-full row-span-1 bg-stone-900 shadow-md flex items-center justify-center hover:text-lg hover:text-gray-400'
+  <!-- <div
+    class='col-span-2 md:col-span-1 p-5 md:p-8 rounded-full row-span-1 bg-violet-900 shadow-md flex items-center justify-center hover:text-lg hover:text-gray-400'
   >
-    <a href='/' class='text-white font-semibold'> Light/Dark </a>
-  </div>
+    <a href='/' class='text-white font-semibold'> L </a>
+  </div> -->
 </section>
 
 <style>

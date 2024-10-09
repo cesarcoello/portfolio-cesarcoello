@@ -3,8 +3,7 @@ const props = Astro.props;
 ---
 
 <footer
-  class='bg-stone-900 px-8 py-4 mt-2 flex justify-between items-center
-rounded-full w-full max-w-screen-xl mx-auto my-0'
+  class='bg-stone-900 px-8 py-4 mt-2 flex justify-between items-center rounded-full w-full max-w-screen-xl mx-auto my-0'
 >
   <!-- Texto o Título -->
   <div class='flex justify-center items-center gap-2'>
@@ -30,8 +29,8 @@ rounded-full w-full max-w-screen-xl mx-auto my-0'
           ></path>
         </g>
       </svg>
-      <span class='tooltip-text w-1/2'
-        >Este sitio web está hecho por mí en Astro, TypeScript y TailwindCSS</span
+      <span class='tooltip-text'
+        >Este sitio web está hecho por mí en Astro y TailwindCSS</span
       >
     </div>
   </div>
@@ -111,8 +110,8 @@ rounded-full w-full max-w-screen-xl mx-auto my-0'
 
   .tooltip-text {
     visibility: hidden;
-    width: 70vw; /* Ancho del tooltip en la mitad del tamaño de la pantalla */
-    max-width: 300px; /* Opcional: límite máximo de ancho para pantallas grandes */
+    width: 50vw; /* Ancho del tooltip en la mitad del tamaño de la pantalla */
+    max-width: 300px; /* Límite máximo de ancho para pantallas grandes */
     background-color: black;
     color: white;
     text-align: center;
@@ -123,7 +122,9 @@ rounded-full w-full max-w-screen-xl mx-auto my-0'
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-    transition: opacity 0.3s;
+    transition:
+      opacity 0.3s,
+      visibility 0.3s; /* Agrega transición a la opacidad y visibilidad */
     z-index: 1; /* Para que el tooltip esté por encima del contenido */
   }
 
@@ -142,36 +143,9 @@ rounded-full w-full max-w-screen-xl mx-auto my-0'
     visibility: visible;
     opacity: 1;
   }
-</style>
 
-<script>
-  const tooltipTarget = document.querySelector(".tooltip-target");
-  const tooltipText = document.querySelector(".tooltip-text") as HTMLElement;
-
-  // Verifica si tooltipText no es null antes de agregar los eventos
-  if (tooltipText) {
-    // Al pasar el mouse
-    tooltipTarget?.addEventListener("mouseenter", () => {
-      tooltipText.style.visibility = "visible";
-      tooltipText.style.opacity = "1";
-    });
-
-    // Al salir del mouse
-    tooltipTarget?.addEventListener("mouseleave", () => {
-      setTimeout(() => {
-        tooltipText.style.visibility = "hidden";
-        tooltipText.style.opacity = "0";
-      }, 1500); // Espera 1.5 segundos (1500 ms) antes de ocultar
-    });
-
-    // Para manejar el toque en dispositivos móviles
-    tooltipTarget?.addEventListener("touchstart", () => {
-      tooltipText.style.visibility = "visible";
-      tooltipText.style.opacity = "1";
-      setTimeout(() => {
-        tooltipText.style.visibility = "hidden";
-        tooltipText.style.opacity = "0";
-      }, 3000); // Espera 3 segundos (3000 ms) antes de ocultar
-    });
+  .tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
   }
-</script>
+</style>

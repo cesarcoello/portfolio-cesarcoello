@@ -6,6 +6,7 @@ const enlaces = [
   { title: "GitHub", url: "https://github.com/cesarcoello" },
 ];
 
+const email = "cesarcoellomr@gmail.com";
 const props = Astro.props;
 ---
 
@@ -46,14 +47,36 @@ const props = Astro.props;
     <!-- Enlace al correo con estilo de botón -->
     <a
       href='mailto:cesarcoellomr@gmail.com'
-      class='text-base sm:text-lg text-white font-medium bg-cyan-600 hover:bg-cyan-700 p-4 md:p-6 rounded-full mt-4 shadow-md transition-all duration-300 hover:text-lg md:hover:text-xl'
+      class='text-base sm:text-lg text-white font-medium bg-cyan-600 hover:bg-cyan-700 p-4 md:p-6 rounded-full mt-4 transition-all duration-300 hover:text-lg md:hover:text-xl'
     >
       cesarcoellomr@gmail.com
     </a>
+
+    <!-- Botón para copiar el correo -->
+    <button
+      id='copy-email-button'
+      class='flex justify-center items-center gap-2 text-xs py-2 text-stone-500 hover:text-stone-600 underline transition-colors duration-300 ease-in-out mt-2'
+    >
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='1em'
+        height='1em'
+        viewBox='0 0 24 24'
+      >
+        <g fill='none' stroke='currentColor' stroke-width='1.5'>
+          <path
+            d='M6 11c0-2.828 0-4.243.879-5.121C7.757 5 9.172 5 12 5h3c2.828 0 4.243 0 5.121.879C21 6.757 21 8.172 21 11v5c0 2.828 0 4.243-.879 5.121C19.243 22 17.828 22 15 22h-3c-2.828 0-4.243 0-5.121-.879C6 20.243 6 18.828 6 16z'
+          ></path>
+          <path
+            d='M6 19a3 3 0 0 1-3-3v-6c0-3.771 0-5.657 1.172-6.828S7.229 2 11 2h4a3 3 0 0 1 3 3'
+          ></path>
+        </g>
+      </svg>
+      <span>Copiar correo</span>
+    </button>
   </div>
 
   <!-- Redes sociales o enlaces adicionales -->
-
   {enlaces.map(({ title, url }) => <LinkCard title={title} url={url} />)}
 
   <!-- Enlace Curriculum -->
@@ -68,14 +91,25 @@ const props = Astro.props;
       CV
     </a>
   </div>
-
-  <!-- Enlace Mode L/D -->
-  <!-- <div
-    class='col-span-2 md:col-span-1 p-5 md:p-8 rounded-full row-span-1 bg-violet-900 shadow-md flex items-center justify-center hover:text-lg hover:text-gray-400'
-  >
-    <a href='/' class='text-white font-semibold'> L </a>
-  </div> -->
 </section>
+
+<script>
+  function enableCopyButton() {
+    const copyButton = document.getElementById("copy-email-button");
+
+    if (copyButton) {
+      copyButton.addEventListener("click", () => {
+        const correo = "cesarcoellomr@gmail.com";
+        navigator.clipboard.writeText(correo).then(() => {
+          alert("Correo copiado al portapapeles");
+        });
+      });
+    }
+  }
+
+  document.addEventListener("astro:after-swap", enableCopyButton); // Se ejecuta después de cada cambio de página
+  document.addEventListener("DOMContentLoaded", enableCopyButton); // Se ejecuta en la carga inicial
+</script>
 
 <style>
   @media (min-width: 768px) {

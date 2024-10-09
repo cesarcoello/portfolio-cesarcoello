@@ -31,7 +31,7 @@ rounded-full w-full max-w-screen-xl mx-auto my-0'
         </g>
       </svg>
       <span class='tooltip-text w-1/2'
-        >Este sitio web está hecho por mí en Astro y TailwindCSS</span
+        >Este sitio web está hecho por mí en Astro, TypeScript y TailwindCSS</span
       >
     </div>
   </div>
@@ -143,3 +143,35 @@ rounded-full w-full max-w-screen-xl mx-auto my-0'
     opacity: 1;
   }
 </style>
+
+<script>
+  const tooltipTarget = document.querySelector(".tooltip-target");
+  const tooltipText = document.querySelector(".tooltip-text") as HTMLElement;
+
+  // Verifica si tooltipText no es null antes de agregar los eventos
+  if (tooltipText) {
+    // Al pasar el mouse
+    tooltipTarget?.addEventListener("mouseenter", () => {
+      tooltipText.style.visibility = "visible";
+      tooltipText.style.opacity = "1";
+    });
+
+    // Al salir del mouse
+    tooltipTarget?.addEventListener("mouseleave", () => {
+      setTimeout(() => {
+        tooltipText.style.visibility = "hidden";
+        tooltipText.style.opacity = "0";
+      }, 1500); // Espera 1.5 segundos (1500 ms) antes de ocultar
+    });
+
+    // Para manejar el toque en dispositivos móviles
+    tooltipTarget?.addEventListener("touchstart", () => {
+      tooltipText.style.visibility = "visible";
+      tooltipText.style.opacity = "1";
+      setTimeout(() => {
+        tooltipText.style.visibility = "hidden";
+        tooltipText.style.opacity = "0";
+      }, 3000); // Espera 3 segundos (3000 ms) antes de ocultar
+    });
+  }
+</script>

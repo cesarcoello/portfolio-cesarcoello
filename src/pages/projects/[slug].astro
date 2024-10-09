@@ -90,18 +90,54 @@ const { Content, headings } = await entry.render();
             href={entry.data.demoUrl}
             target='_blank'
             rel='noopener noreferrer'
-            class='font-medium md:my-4 py-1 px-6 md:text-xl text-center bg-stone-500 hover:bg-stone-700 text-white rounded-full'
+            class=' flex justify-center items-center gap-1 font-medium md:my-4 py-1 px-6 md:text-xl text-center bg-stone-500 hover:bg-opacity-0 text-white rounded-full'
           >
-            Ver Demo
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='1.3em'
+              height='1.3em'
+              viewBox='0 0 24 24'
+              {...props}
+            >
+              <g
+                fill='none'
+                stroke='currentColor'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                stroke-width='2'
+              >
+                <path d='M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m.6-3h16.8M3.6 15h16.8' />
+                <path d='M11.5 3a17 17 0 0 0 0 18m1-18a17 17 0 0 1 0 18' />
+              </g>
+            </svg>
+            <p>Ver Demo</p>
           </a>
 
           <a
             href={entry.data.repoUrl}
             target='_blank'
             rel='noopener noreferrer'
-            class='font-medium md:my-4 py-1 px-6 text-center md:text-xl bg-stone-500 hover:bg-stone-700 text-white rounded-full'
+            class='flex justify-center items-center gap-1 font-medium md:my-4 py-1 px-6 text-center md:text-xl bg-stone-500 hover:bg-opacity-0 text-white rounded-full'
           >
-            Ver Repo
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='1.3em'
+              height='1.3em'
+              viewBox='0 0 24 24'
+              style='transform: rotate(135deg);'
+              {...props}
+            >
+              <path
+                fill='none'
+                stroke='currentColor'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                stroke-width='2'
+                d='M10 16H7a4 4 0 0 1-4-4v0a4 4 0 0 1 4-4h3m6 4H8m6 4h3a4 4 0 0 0 4-4v0a4 4 0 0 0-4-4h-3'
+              />
+            </svg>
+
+            <p>Ver Repo</p>
           </a>
         </div>
       )

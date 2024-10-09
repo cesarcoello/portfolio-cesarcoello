@@ -72,7 +72,7 @@ const props = Astro.props;
           ></path>
         </g>
       </svg>
-      <span>Copiar correo</span>
+      <span id='copy-email-text'>Copiar correo</span>
     </button>
   </div>
 
@@ -96,12 +96,20 @@ const props = Astro.props;
 <script>
   function enableCopyButton() {
     const copyButton = document.getElementById("copy-email-button");
+    const copyTextSpan = document.getElementById("copy-email-text");
 
-    if (copyButton) {
+    if (copyButton && copyTextSpan) {
+      // Verifica que ambos elementos no sean null
       copyButton.addEventListener("click", () => {
         const correo = "cesarcoellomr@gmail.com";
         navigator.clipboard.writeText(correo).then(() => {
-          alert("Correo copiado al portapapeles");
+          // Cambia el texto a "Copiado"
+          copyTextSpan.textContent = "¡Copiado!";
+
+          // Después de 2 segundos, vuelve a "Copiar correo"
+          setTimeout(() => {
+            copyTextSpan.textContent = "Copiar correo";
+          }, 2000); // 2 segundos
         });
       });
     }

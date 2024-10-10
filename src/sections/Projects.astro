@@ -8,6 +8,7 @@ interface Project {
     title: string;
     summary: string;
     bgImg: string;
+    tags: string[];
   };
 }
 const projects: Project[] = await getCollection("projects");
@@ -27,6 +28,7 @@ const projects: Project[] = await getCollection("projects");
           description={project.data.summary}
           img={project.data.bgImg}
           href={`/projects/${project.slug}`}
+          tags={project.data.tags}
         />
       ))
     }

@@ -1,31 +1,19 @@
 ---
+// Importar el componente Paragraph
 import Paragraph from "../components/Paragraph.astro";
 import StackCard from "../components/StackCard.astro";
 import { stack } from "../data/stack";
 
+// Aquí usas el contenido con etiquetas HTML directamente
 const paragraph = [
   {
-    content: `👨‍💻 Como ingeniero en sistemas especializado en desarrollo web, estoy
-      entusiasmado por la oportunidad de aportar a su organización mi
-      experiencia en la creación de aplicaciones dinámicas y escalables. He
-      trabajado en diversos proyectos reales, aplicando tecnologías como React,
-      HTML, CSS y utilizando metodologías ágiles como Scrum para asegurar
-      entregas eficientes y colaborativas.`,
+    content: `👨‍💻 Como <strong>ingeniero en sistemas</strong> especializado en <strong>desarrollo web</strong>, estoy entusiasmado por la oportunidad de aportar a su organización mi experiencia en la creación de <strong>📈aplicaciones dinámicas y escalables</strong>. He trabajado en diversos proyectos reales, aplicando tecnologías como <strong>React, HTML, CSS</strong> y utilizando metodologías ágiles como <strong>Scrum</strong> para asegurar entregas eficientes y colaborativas📊.`,
   },
   {
-    content: `🏆 Aunque tengo algunas herramientas preferidas, siempre elijo la mejor para
-      cada tarea, incluso si no está en mi lista habitual. Mi objetivo es
-      proporcionar la solución adecuada para cada proyecto, enfocándome en la
-      experiencia del usuario, la eficiencia y el diseño limpio. Además, hago
-      uso de herramientas avanzadas para asegurar la calidad del código y la
-      escalabilidad de los sistemas. Estoy comprometido a a ayudar a su equipo a
-      alcanzar sus metas y a impulsar el éxito de sus proyectos.`,
+    content: `⚙️ Aunque tengo algunas herramientas preferidas, siempre elijo la mejor para cada tarea, incluso si no está en mi lista habitual. Mi objetivo es proporcionar la <strong> 🏆 solución adecuada</strong> para cada proyecto, enfocándome en la <strong>experiencia del usuario, la eficiencia y el diseño limpio 🔎.</strong>`,
   },
   {
-    content: `🎵 Más allá de la programación, soy un entusiasta del diseño y la
-      ilustración, para mí, son una forma de comunicar de manera visual,
-      capturando emociones e ideas. Un pasatiempo que disfruto mucho es tocar la
-      guitarra, ya que me permite relajarme a través de la música.`,
+    content: `🎵 Más allá de la programación, soy un entusiasta del <strong>🎨 diseño y la ilustración</strong>, para mí, son una forma de comunicar de manera visual, capturando emociones e ideas. Un pasatiempo que disfruto mucho es <strong>🎸 tocar la guitarra</strong>, ya que me permite relajarme a través de la música.`,
   },
 ];
 ---
@@ -34,7 +22,7 @@ const paragraph = [
   id='about'
   class='grid w-full max-w-screen-2xl gap-2 my-2 md:pt-2 grid-cols-1 grid-rows-1 md:grid-cols-5 md:grid-rows-1'
 >
-  <!-- Sección de tecnologias y herramientas -->
+  <!-- Sección de tecnologías y herramientas -->
   <div
     class='relative rounded-3xl p-5 md:p-8 col-span-2 md:col-span-2 row-span-1 bg-stone-900 text-white shadow-md flex flex-col justify-center items-center'
   >
@@ -57,7 +45,7 @@ const paragraph = [
     </div>
   </div>
 
-  <!-- Sección de sobre mi -->
+  <!-- Sección de sobre mí -->
   <div
     class='rounded-3xl p-5 md:p-8 col-span-2 md:col-span-3 row-span-1 bg-stone-900 shadow-md flex flex-col justify-center items-start text-start'
   >

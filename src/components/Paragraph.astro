@@ -1,4 +1,6 @@
 ---
+// Paragraph.astro
+
 export interface Props {
   content: string;
 }
@@ -6,4 +8,4 @@ export interface Props {
 const { content } = Astro.props;
 ---
 
-<p class='text-sm md:text-lg text-white mb-6'>{content}</p>
+<p class='text-sm md:text-lg text-white mb-6' set:html={content} />

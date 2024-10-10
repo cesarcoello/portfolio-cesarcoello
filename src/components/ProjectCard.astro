@@ -18,21 +18,49 @@ const { title, description, img, href } = Astro.props;
   </div>
 
   <!-- Contenido del proyecto -->
-  <div class='relative p-5 text-white flex flex-col justify-between h-full'>
-    <!-- Título y Descripción -->
+  <div
+    class='relative p-5 pb-0 text-white flex flex-col justify-between h-full'
+  >
     <div>
+      <!-- Título y Descripción -->
       <div>
-        <h1 class='text-xl md:text-5xl font-semibold mb-2 text-shadow'>
-          {title}
-        </h1>
-        <p class='text-md md:text-2xl mb-2 text-shadow'>
-          {description}
-        </p>
+        <div>
+          <h1 class='text-xl md:text-5xl font-semibold mb-2 text-shadow'>
+            {title}
+          </h1>
+          <p class='text-md md:text-xl mb-2 text-shadow'>
+            {description}
+          </p>
+        </div>
+      </div>
+
+      <!--Contenedor Tags -->
+      <div class='flex justify-start items-start gap-2'>
+        <div
+          class='bg-stone-300 text-xs text-stone-900 font-medium rounded-md px-3 py-1 shadow-sm'
+        >
+          React
+        </div>
+        <div
+          class='bg-stone-300 text-xs text-stone-700 font-medium rounded-md px-3 py-1'
+        >
+          React
+        </div>
+        <div
+          class='bg-stone-300 text-xs text-stone-700 font-medium rounded-md px-3 py-1'
+        >
+          React
+        </div>
+        <div
+          class='bg-stone-300 text-xs text-stone-700 font-medium rounded-md px-3 py-1'
+        >
+          React
+        </div>
       </div>
     </div>
 
     <!-- Botón de flecha -->
-    <div class='flex justify-end items-end'>
+    <div class='flex justify-end items-end px-0 py-5'>
       <a href={href}>
         <button
           class='bg-white hover:bg-transparent text-stone-900 h-16 w-16 p-2 rounded-full flex justify-center items-center transition-colors duration-300 ease-in-out'

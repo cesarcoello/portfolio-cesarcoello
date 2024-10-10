@@ -1,6 +1,6 @@
 export const stack = [
-    {name:'Html', icon:"/stack/html.svg" },
-    {name:'Css', icon:"/stack/css.svg" },
+    {name:'Html', icon:"/stack/html5.svg" },
+    {name:'Css', icon:"/stack/css3.svg" },
     {name:'Javascript', icon:"/stack/javascript.svg" },
     {name:'Bootstrap', icon:"/stack/bootstrap.svg" },
     {name:'Tailwind', icon:"/stack/tailwind.svg" },
@@ -8,8 +8,8 @@ export const stack = [
     {name:'React', icon:"/stack/react.svg" },
     {name:'MySql', icon:"/stack/mysql.svg" },
     {name:'SQLServer', icon:"/stack/sqlserver.svg" },
-    {name:'PLSQL', icon:"/stack/plsql.svg" },
     {name:'SQLDeveloper', icon:"/stack/sqldeveloper.svg" },
+    {name:'Oracle Database', icon:"/stack/oracle.svg" },
     {name:'Figma', icon:"/stack/figma.svg" },
     {name:'Git', icon:"/stack/git.svg" },
     {name:'GitHub', icon:"/stack/github.svg" },

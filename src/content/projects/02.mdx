@@ -1,0 +1,71 @@
+---
+title: "Infraestructura Cloud Automatizada"
+subtitle: "Proyecto de clase Sistemas Expertos" 
+summary: "Diseño y despliegue de una arquitectura para un sistema contable utilizando Terraform y Azure."
+description: "Este proyecto tiene como objetivo diseñar e implementar una arquitectura en la nube para un sistema contable, utilizando Terraform para automatizar el despliegue de los recursos en Azure. La infraestructura incluye servicios clave como App Service Plans, Azure SQL, redes virtuales (VNets), y Storage Accounts, garantizando un entorno escalable, seguro y eficiente."
+date: "2024"
+links: false
+frontImg: "/projects/02/front.jpg"
+bgImg: "/projects/02/bg.jpg"
+demoUrl: ""
+repoUrl: ""
+tags: ["Terraform", "Azure", "Cloud", "Infraestructura como Código"]
+---
+
+## Diagrama de Arquitectura
+
+El diagrama muestra los componentes principales del sistema y su interacción:
+
+- **App Service Plan:** Aloja aplicaciones web que gestionan la interfaz y lógica del sistema contable.
+- **Container Registry:** Almacena las imágenes de contenedores utilizadas por las aplicaciones desplegadas.
+- **SQL Azure:** Provee almacenamiento para los datos financieros del sistema contable.
+- **Blob Storage:** Almacena archivos y documentos no estructurados de manera eficiente.
+- **Queue Storage:** Administra colas de mensajes para manejar procesos asíncronos en la arquitectura.
+- **Function App:** Ejecuta tareas y procesos en segundo plano basados en eventos para optimizar la funcionalidad del sistema.
+
+---
+
+## Propósito del Proyecto
+
+El propósito de este proyecto es **crear y desplegar una arquitectura en la nube** para un sistema contable utilizando **Terraform** y los recursos de Azure. El objetivo es optimizar la automatización y asegurar la escalabilidad, permitiendo un manejo eficiente de aplicaciones y bases de datos mediante App Service Plans, Azure SQL, y redes virtuales.
+
+---
+
+## Pasos Seguidos para el Despliegue
+
+1. **Diseño del Diagrama de Arquitectura:**  
+   - Identifiqué los recursos necesarios (App Service Plans, Azure SQL, Storage Accounts, VNets).
+   - Esquematicé las conexiones entre los recursos para asegurar un flujo de datos eficiente.
+
+2. **Configuración de Terraform:**  
+   - Creé los archivos principales:
+     - **`main.tf`**: Define los recursos de Azure.
+     - **`variables.tf`**: Contiene las variables reutilizables (como nombres de recursos y tamaños).
+
+
+3. **Configuración de Redes:**  
+   - Creé una VNet con subredes para segmentar el tráfico.
+
+4. **Despliegue de la Infraestructura:**  
+   - Ejecuté los comandos:
+     ```bash
+     terraform init
+     terraform plan
+     terraform apply
+     ```
+   - Validé que todos los recursos se desplegaran correctamente en el portal de Azure.
+
+5. **Verificación en el Portal de Azure:**  
+   - Revisé que los App Services, bases de datos y demás recursos estuvieran activos.
+
+---
+
+## Tecnologías Usadas
+
+- **Terraform:** Infraestructura como Código (IaC)
+- **Azure:** Servicios en la nube
+- **Lenguaje HCL:** Definición de infraestructura
+- **Git y GitHub:** Control de versiones y repositorio
+
+## Video Explicación  
+[Ver video explicativo en YouTube](https://youtu.be/Ji5FXYq0rj0?si=6wjY561h2cTrVJef)  

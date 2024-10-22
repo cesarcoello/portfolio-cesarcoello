@@ -9,8 +9,9 @@ export const stack = [
     {name:'MySql', icon:"/stack/mysql.svg" },
     {name:'SQLServer', icon:"/stack/sqlserver.svg" },
     {name:'SQLDeveloper', icon:"/stack/sqldeveloper.svg" },
+    {name:'Terraform', icon:"/stack/terraform.svg" },
+    {name:'Azure Cloud', icon:"/stack/azure.svg" },
     {name:'Figma', icon:"/stack/figma.svg" },
     {name:'Git', icon:"/stack/git.svg" },
-    {name:'GitHub', icon:"/stack/github.svg" },
    
 ]

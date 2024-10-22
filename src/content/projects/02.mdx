@@ -2,13 +2,11 @@
 title: "Infraestructura Cloud Automatizada"
 subtitle: "Proyecto de clase Sistemas Expertos" 
 summary: "Diseño y despliegue de una arquitectura para un sistema contable utilizando Terraform y Azure."
-description: "Este proyecto tiene como objetivo diseñar e implementar una arquitectura en la nube para un sistema contable, utilizando Terraform para automatizar el despliegue de los recursos en Azure. La infraestructura incluye servicios clave como App Service Plans, Azure SQL, redes virtuales (VNets), y Storage Accounts, garantizando un entorno escalable, seguro y eficiente."
+description: "Diseño e implementación de una arquitectura en la nube para un sistema contable, utilizando Terraform para automatizar el despliegue de los recursos en Azure. La infraestructura integra servicios clave como App Service Plans, Azure SQL, redes virtuales (VNets) y Storage Accounts, asegurando un entorno escalable, seguro y eficiente."
 date: "2024"
 links: false
 frontImg: "/projects/02/front.jpg"
 bgImg: "/projects/02/bg.jpg"
-demoUrl: ""
-repoUrl: ""
 tags: ["Terraform", "Azure", "Cloud", "Infraestructura como Código"]
 ---
 
@@ -16,12 +14,22 @@ tags: ["Terraform", "Azure", "Cloud", "Infraestructura como Código"]
 
 El diagrama muestra los componentes principales del sistema y su interacción:
 
-- **App Service Plan:** Aloja aplicaciones web que gestionan la interfaz y lógica del sistema contable.
-- **Container Registry:** Almacena las imágenes de contenedores utilizadas por las aplicaciones desplegadas.
-- **SQL Azure:** Provee almacenamiento para los datos financieros del sistema contable.
-- **Blob Storage:** Almacena archivos y documentos no estructurados de manera eficiente.
-- **Queue Storage:** Administra colas de mensajes para manejar procesos asíncronos en la arquitectura.
-- **Function App:** Ejecuta tareas y procesos en segundo plano basados en eventos para optimizar la funcionalidad del sistema.
+
+**App Service Plan (ContApp):** Aloja la aplicación que interactúa con los clientes, incluyendo tanto su interfaz de usuario (UI) como su API, además de un **Function App** que realiza tareas específicas.
+
+**App Service Plan (Backoffice):** Aloja la interfaz de usuario y API del sistema de administración interna, facilitando la gestión de operaciones contables.
+
+**Container Registry:** Almacena y gestiona las imágenes de contenedores de las aplicaciones (UI y API de ContApp y Backoffice, así como el **Function App**).
+
+**SQL Azure:** Proporciona una base de datos estructurada para almacenar datos financieros, como transacciones, cuentas y reportes.
+
+**Blob Storage:** Almacena archivos no estructurados relacionados con el sistema contable, como recibos, facturas y documentos de respaldo.
+
+**Queue Storage:** Administra los mensajes y peticiones que serán procesados por el **Function App**, permitiendo un manejo eficiente de las solicitudes.
+
+**Function App (Worker):** Ejecuta tareas en segundo plano, como generación de reportes financieros, conciliaciones automáticas, envíos de notificaciones y procesos de cálculo de impuestos. Esto optimiza la funcionalidad del sistema y asegura una respuesta rápida a las necesidades del negocio.
+
+Este diseño integral asegura un sistema contable escalable y eficiente, mejorando la experiencia del usuario y facilitando la gestión de las finanzas.
 
 ---
 
@@ -39,14 +47,16 @@ El propósito de este proyecto es **crear y desplegar una arquitectura en la nub
 
 2. **Configuración de Terraform:**  
    - Creé los archivos principales:
-     - **`main.tf`**: Define los recursos de Azure.
-     - **`variables.tf`**: Contiene las variables reutilizables (como nombres de recursos y tamaños).
-
+     - **`main.tf`**: Define el proveedor de Azure y crea el grupo de recursos para organizar y gestionar los servicios del sistema en una ubicación específica.
+     - **`variables.tf`**: contiene las variables reutilizables para parametrizar el despliegue, como nombres, ubicaciones y etiquetas, facilitando la personalización y mantenimiento del entorno.
 
 3. **Configuración de Redes:**  
-   - Creé una VNet con subredes para segmentar el tráfico.
+   - Definí la configuración de la red, incluyendo la creación de la VNet, subredes y reglas de seguridad, asegurando la conectividad y control de acceso entre los recursos.
 
-4. **Despliegue de la Infraestructura:**  
+4. **Definición de los recursos:**  
+   - Desarrollé los archivos de configuración para cada recurso de la arquitectura, detallando todos los elementos esenciales, como parámetros, nombres, etiquetas (tags), configuraciones de red, tamaños, planes de servicio y toda configuración necesaria para su correcta implementación.
+
+5. **Despliegue de la Infraestructura:**  
    - Ejecuté los comandos:
      ```bash
      terraform init
@@ -55,8 +65,8 @@ El propósito de este proyecto es **crear y desplegar una arquitectura en la nub
      ```
    - Validé que todos los recursos se desplegaran correctamente en el portal de Azure.
 
-5. **Verificación en el Portal de Azure:**  
-   - Revisé que los App Services, bases de datos y demás recursos estuvieran activos.
+6. **Verificación en el Portal de Azure:**  
+   - Accedí al portal de Azure para confirmar que todos los recursos, incluyendo los App Service Plans, bases de datos y demás componentes, se desplegaron correctamente y se encuentran activos y operativos.
 
 ---
 
